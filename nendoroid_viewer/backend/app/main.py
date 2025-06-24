@@ -20,7 +20,18 @@ async def list_nendoroids(fandom: str | None = None, season: str | None = None, 
     if season:
         query = query.where(Nendoroid.season == season)
     result = await session.execute(query)
-    return [n._asdict() if hasattr(n, '_asdict') else {
-        'id': n.id, 'product_id': n.product_id, 'name': n.name,
-        'fandom': n.fandom, 'season': n.season, 'release_date': n.release_date
-    } for n in result.scalars().all()]
+    return [
+        {
+            'id': n.id,
+            'product_id': n.product_id,
+            'name': n.name,
+            'description': n.description,
+            'announcement_date': n.announcement_date,
+            'release_date': n.release_date,
+            'fandom': n.fandom,
+            'season': n.season,
+            'images': n.images,
+            'product_url': n.product_url,
+        }
+        for n in result.scalars().all()
+    ]

@@ -2,6 +2,8 @@
 
 This directory contains a minimal Vue 3 application powered by Vite.
 
+It displays each figure with description, announcement and release dates and images fetched from the backend.
+
 ## Setup
 
 Install dependencies with npm (or yarn) and run the development server:

@@ -11,7 +11,14 @@
       <button @click="load">Load</button>
     </div>
     <ul>
-      <li v-for="fig in figures" :key="fig.id">{{ fig.name }} ({{ fig.release_date }})</li>
+      <li v-for="fig in figures" :key="fig.id">
+        <h3>{{ fig.name }}</h3>
+        <p>{{ fig.description }}</p>
+        <small>Announced: {{ fig.announcement_date }} | Release: {{ fig.release_date }}</small>
+        <div class="images">
+          <img v-for="(img, idx) in fig.images" :key="idx" :src="img" alt="" />
+        </div>
+      </li>
     </ul>
   </div>
 </template>

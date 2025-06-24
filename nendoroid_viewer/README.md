@@ -2,6 +2,8 @@
 
 This project aggregates data about Nendoroid figures and provides a web interface for browsing them.
 
+The database stores each figure's name, description, announcement and release dates as well as all image URLs scraped from the official site.
+
 Directories:
 
 - `scraper/` – Python scraper that collects data from the official website.

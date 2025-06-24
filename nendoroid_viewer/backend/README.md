@@ -2,6 +2,8 @@
 
 This is the FastAPI backend for the Nendoroid Viewer project.
 
+The API exposes `/nendoroids`, returning figures with name, description, announcement and release dates and image URLs.
+
 ## Setup
 
 1. Create a virtual environment and install dependencies:
